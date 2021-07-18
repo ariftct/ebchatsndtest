@@ -53,6 +53,7 @@
     
         
             <a href="#" class="" style="margin-left:25px">Chat-boot</a>
+	     <span id="status" style="margin-left:25px" >   </span>
             <span id="nav-mobile" class="right">
                 <span><a onclick="LogOut()">Log Out</a>
                 </span>
@@ -75,13 +76,11 @@
 		<form id="myForm">
         
         <textarea rows="5" cols="10" id="message" placeholder="write here"></textarea> 
-        <button class="btn waves-effect waves-light blue" type="submit" name="action" onclick="sendMessage()">Submit
+        <button class="btn waves-effect waves-light blue" type="submit" name="action" onclick="sendMessage()">
     <i class="material-icons right">send</i>
   </button> 
   <input type="button" onclick="myFunction()" value="Clear-All" style="margin-left:50px"> </input>
-  <span id="status" >
-       
-    </span>
+ 
   </form>
   
   <script>
