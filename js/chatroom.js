@@ -28,18 +28,18 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
        window.open("index.html",'_self',false);
    }
 });
-
 var count = 0;
 var audio = new Audio('audio_file.mp3');
 
 firebase.database().ref('/messages').on('child_added', function(data){
     console.log(data.val());
-    var node = document.createElement('ul');
+    var node = document.createElement('li');
     node.innerHTML = data.val();
     document.getElementById('chat').appendChild(node);
 	 audio.play();
 	var elem = document.getElementById('data');
   elem.scrollTop = elem.scrollHeight;
+ 
 });
 
 function deleteAll() {
@@ -55,9 +55,14 @@ function removeAllChildNodes(parent) {
 }
 const chat = document.querySelector('#chat');
 removeAllChildNodes(chat);
+
+setTimeout(function() {
+            location.reload();
+            }, 2000);
+
+            return true;
+        
 }
-
-
 
 
 
