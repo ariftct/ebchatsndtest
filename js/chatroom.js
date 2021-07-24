@@ -40,7 +40,22 @@ firebase.database().ref('/messages').on('child_added', function(data){
 	 audio.play();
 	var elem = document.getElementById('data');
   elem.scrollTop = elem.scrollHeight;
-})
+});
+
+function deleteAll() {
+	
+	 firebase.database().ref().set(null);
+var list=document.getElementById('chat');
+
+list.removeChild(list.getElementsByTagName('li')[0]);
+function removeAllChildNodes(parent) {
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
+}
+const chat = document.querySelector('#chat');
+removeAllChildNodes(chat);
+}
 
 
 
