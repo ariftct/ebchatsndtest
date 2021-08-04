@@ -6,6 +6,32 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <title> Materialize CSS !</title>
 		
+		
+		
+		
+  <script type="text/javascript">
+    function convert()
+    {
+	  var text=document.getElementById("urlconvert").value;
+	  var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+	  var text1=text.replace(exp, '<a target="blank" href="$1">$1</a>');
+	  var exp2 =/(^|[^\/])(www\.[\S]+(\b|$))/gim;
+	  var rplc=text1.replace(exp2, '$1<a target="blank" href="http://$2"></a>');
+      document.getElementById("message").value = rplc;
+      
+    }
+  </script>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 		<script>
         function formrest(){
             document.getElementById('message').value='';
@@ -114,15 +140,37 @@
 		</div>
 		
         
-        <textarea rows="5" cols="10" id="message" placeholder="write here"></textarea> 
+        <textarea rows="2" cols="10" id="message" placeholder="write here"></textarea> 
+       
 	
-        <button class="btn waves-effect waves-light blue" type="submit" name="action" onclick="sendMessage(); formrest()">Submit
+        <button class="btn waves-effect waves-light blue" type="submit" name="action" onclick="sendMessage(); formrest();  convert();">Submit
   </button>  <span id="status"></span>  	
 		
  <button type="button" onclick="deleteAll()" class="deltt">DELETE</button>
+
  
  
-  
+ 
+ 
+ 
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <h5> Share Link </h5>
+  <textarea rows="2" cols="10" id="urlconvert" placeholder="paste link here"></textarea> 
+ 
+  <input type="button" value="Convert" onclick="convert();">
+   <input type="button" value="Clear" onclick="clearContent();">
+
+<script>
+function clearContent()
+{
+    document.getElementById("urlconvert").value='';
+    document.getElementById("message").value='';
+}
+</script>
 
        
        
@@ -135,7 +183,7 @@
  
    
   
-  </div>
+  
   <script>
 function myFunction() {
   document.getElementById("myForm").reset();
