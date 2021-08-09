@@ -152,6 +152,27 @@ setInterval(function(){
 		
  <button type="button" onclick="deleteAll()" class="deltt">DELETE</button>
 
+ <span>Reload in- <span id="timer">05:00<span> minutes!<span>
+
+      <!-- custom js -->
+      <script>
+         window.onload = function () {
+            var minute = 4;
+            var sec = 60;
+            setInterval(function () {
+               document.getElementById("timer").innerHTML =
+                  minute + " : " + sec;
+               sec--;
+               if (sec == 00) {
+                  minute--;
+                  sec = 60;
+                  if (minute == 0) {
+                     minute = 5;
+                  }
+               }
+            }, 1000);
+         };
+      </script>
  
  
  
