@@ -166,8 +166,10 @@ setInterval(function(){
                if (sec == 00) {
                   minute--;
                   sec = 60;
-                  if (minute == 0) {
-                     minute = 5;
+                  if (minute == 0 && sec == 1) {
+                     minute = 00;
+                     sec = 00;
+
                   }
                }
             }, 1000);
