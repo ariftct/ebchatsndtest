@@ -112,6 +112,9 @@ setInterval(function(){
 		color:white;
 		
 		}
+		.btnn{border:none;color:red;}
+		.clr {color:red;}
+
   </style>
     </head>
     <body>
@@ -146,11 +149,26 @@ setInterval(function(){
         
         <textarea rows="2" cols="10" id="message" placeholder="write here"></textarea> 
        
-	
-        <button class="btn waves-effect waves-light blue" type="submit" name="action" onclick="sendMessage(); formrest();  convert();">Submit
+	   
+	   
+	<div id="demo-toast-example" class="mdl-js-snackbar mdl-snackbar clr">
+  <div class="mdl-snackbar__text"></div>
+  <button class="mdl-snackbar__action btnn" type="button"></button>
+</div>
+
+
+        <button class="btn waves-effect waves-light blue" type="submit" name="action" onclick="sendMessage(); formrest();  convert(); ">Submit
   </button>  <span id="status"></span>  	
 		
  <button type="button" onclick="deleteAll()" class="deltt">DELETE</button>
+ 
+
+ 
+ <br>
+ 
+ 
+ 
+ 
 
  <span>Reload in-</span> <span id="timer"></span>
 
@@ -212,6 +230,7 @@ function clearContent()
         <!--Scripts-->
         <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <script src="js/materialize.js"></script>
+        <script src="snackber.js"></script>
         <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
 
         <script src="js/chatroom.js"></script>
