@@ -11,7 +11,8 @@ const msg = document.getElementById('message');
 
 function sendMessage(){
     var Msg = msg.value;
-    firebase.database().ref('/messages').push(Msg);
+    var snt = firebase.database().ref('/messages').push(Msg);
+	snt.then(successfull, failed);
 }
 
 
@@ -67,3 +68,22 @@ setTimeout(function() {
 
 
 
+
+
+//Actions for the .set() promise successfull or failed
+function successfull(){
+  snackbar('Message Sent')
+}
+
+function failed(){
+  snackbar('Error, Not Sent')
+}
+
+
+
+
+function snackbar(text) {
+  var snackbarContainer = document.querySelector('#demo-toast-example');
+  var data = {message: text};
+  snackbarContainer.MaterialSnackbar.showSnackbar(data);
+  }
